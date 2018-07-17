@@ -1,5 +1,5 @@
 module.exports = function (app, db) {
-    app.post('/feed/', (req, res) => {
+    app.post('/feed/search', (req, res) => {
         var name = req.body.name;
         console.log(req.body);
         db.collection("sensors").findOne({ "name": name }, (err, item) => {
@@ -16,4 +16,7 @@ module.exports = function (app, db) {
             }
         })
     })
+    
+
+
 }
